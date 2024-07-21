@@ -12,7 +12,6 @@ class HomeViewBody extends StatelessWidget {
       children: [
         StopWatchTimer(),
         LapsListView(),
-        
         ControlButtons(),
       ],
     );
