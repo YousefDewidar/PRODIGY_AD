@@ -21,9 +21,9 @@ class _StopWatchTimerState extends State<StopWatchTimer> {
       padding: const EdgeInsets.only(top: 40.0, bottom: 60),
       child: BlocListener<ControlCubit, ControlState>(
         listener: (context, state) {
-          print(BlocProvider.of<ControlCubit>(context).getCurTime());
           if (state is ControlDone) {
-            curTime = BlocProvider.of<ControlCubit>(context).getCurTime();
+            curTime = BlocProvider.of<ControlCubit>(context).formatDuration();
+            setState(() {});
           }
         },
         child: Text(

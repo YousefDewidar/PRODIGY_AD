@@ -16,6 +16,10 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
+          side: isGO
+              ? WidgetStatePropertyAll(
+                  BorderSide(color: title == 'Lap' ? Colors.blue : const Color.fromARGB(185, 244, 67, 54),width: 2))
+              : const WidgetStatePropertyAll(BorderSide.none),
           shape: WidgetStatePropertyAll(
               isGO ? const CircleBorder() : const StadiumBorder()),
           padding: const WidgetStatePropertyAll(EdgeInsets.all(30)),

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stop_watch/control%20cubit/control_cubit.dart';
@@ -9,7 +11,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.deepPurpleAccent,
       body: SafeArea(
         child: Column(
@@ -17,7 +19,8 @@ class HomeView extends StatelessWidget {
           children: [
             const CustomTitle(),
             BlocProvider(
-              create: (context) => ControlCubit(),
+              create: (context) =>
+                  ControlCubit(Timer(Duration.zero, () => print)),
               child: const HomeViewBody(),
             ),
           ],
